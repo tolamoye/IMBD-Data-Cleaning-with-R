@@ -184,8 +184,8 @@ rename(Income_Usd = Income)
 Imbd_messy_data $Votes
 
 # REMOVING THE DECIMAL POINT FROM THE VOTE COLUMN TO BE ABLE TO CONVERT TO A NUMERIC CLASS 
-Imbd_messy_data $Votes <- gsub("\\.", "", Imbd_messy_data $Votes)
-Imbd_messy_data $Votes = as.numeric(Imbd_messy_data $Votes)
+Imbd_messy_data$Votes <- gsub("\\.", "", Imbd_messy_data $Votes)
+Imbd_messy_data$Votes = as.numeric(Imbd_messy_data $Votes)
 
 # 11
 # SCORE
