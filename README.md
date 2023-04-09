@@ -40,7 +40,7 @@ The dataset was assessed for abnormalities and data quality. It was noted that a
 ---
 
 ## DATA TRANSFORMATION
-When I initially downloaded the dataset, I viewed it in Excel before importing it to R. Since the dataset was in a CSV file format, I converted it to an Excel file. Before cleaning, the dataset had approximately 101 rows and 5 columns. However, after cleaning, one row had no data and was removed, resulting in a total of 100 rows. Additionally, the number of columns increased to 11 because the initial columns were not properly distributed into their appropriate variables. Furthermore, the dataset was only separated by a semicolon instead of being separated by colon, which required additional cleaning steps. You can see view the original data [here]()
+When I initially downloaded the dataset, I viewed it in Excel before importing it to R. Since the dataset was in a CSV file format, I converted it to an Excel file. Before cleaning, the dataset had approximately 101 rows and 5 columns. However, after cleaning, one row had no data and was removed, resulting in a total of 100 rows. Additionally, the number of columns increased to 11 because the initial columns were not properly distributed into their appropriate variables. Furthermore, the dataset was only separated by a semicolon instead of being separated by colon, which required additional cleaning steps. You can see view the original data [here](Imbd_messy_data.xlsx)
 
 ### Messy table                                                                                                          
 ![01 Imessy_MBD table](https://user-images.githubusercontent.com/128150171/230797854-53b921a6-e41d-4f32-800c-620a6b00467d.png) 
@@ -154,7 +154,7 @@ Messy                                                                           
 
 ### CLEANED TABLE
 ![33 cleaned_table](https://user-images.githubusercontent.com/128150171/230797913-88339da8-6dba-41cb-8be1-ca3d1855f138.png)
-You can view the cleaned data [here]()
+You can view the cleaned data [here](Imbd_cleaned_data.xlsx)
 
 **Now we are checking to confirm there are no missing observation**
 
@@ -166,14 +166,11 @@ You can view the cleaned data [here]()
 
 
 ## CONCLUSION AND RECOMMENDATION
-After cleaning the data, it is evident that the dataset consists of information on the top-rated movies on IMDb based on user ratings. The data includes the IMDb title ID, original title, release year, genre, duration, country of origin, content rating, director, income, number of votes, and user rating score. Finally, it is essential to note that the dataset is limited to the movies available on IMDb, and the ratings are based solely on user ratings on the website, so it may not represent the general audience's preferences.
+After cleaning the data, it is evident that the dataset consists of information on the top-rated movies on **IMBD** based on user ratings. The data includes the **IMBD** title ID, original title, release year, genre, duration, country of origin, content rating, director, income, number of votes, and user rating score. Finally, it is essential to note that the dataset is limited to the movies available on **IMBD**, and the ratings are based solely on user ratings on the website, so it may not represent the general audience's preferences.
 Overall, the goal of data cleaning is to ensure that the data is accurate, consistent, and complete. This will help you to avoid errors and make more accurate analyses and predictions.
 
-
-
-
-
-
+---
+You can view the step-by-step process I followed to clean the data [here](IMBD_cleaning.R)
 
 
 
