@@ -16,21 +16,21 @@ glimpse(Imbd_messy_data)
 # UNITE ALL COLUMNS
 Imbd_messy_data <- Imbd_messy_data %>% unite("united", `IMBD title ID;Original titlÊ;Release year;Genrë¨;Duration;Country;Content Rating;Director;;Income; Votes ;Score`, `...2`, `...3`, `...4`, `...5`)
 
-# LET'S MAKE THE SEMICOLON CONSISTENT BY REPLACING DOUBLE SEMICOLON TO SINGLE SEMICOLON
+# LET'S MAKE THE SEMICOLON CONSISTENT BY REPLACING DOUBLE SEMICOLON WITH SINGLE SEMICOLON
 Imbd_messy_data <- Imbd_messy_data %>%
 mutate(united = str_replace_all(united, ";;", ";"))
 
-# LET'S SEPERATE THEM BY THEIR COMMON DELIMITERS(;) AND ASSIGN TO THEM THEIR PROPER COLUMN NAMES
+# LET'S SEPARATE THEM BY THEIR COMMON DELIMITERS(;) AND ASSIGN TO THEM THEIR PROPER COLUMN NAMES
 Imbd_messy_data <- Imbd_messy_data %>%
 separate(united, into = c("IMBD_titleID", "Original_title", "Release_year", "Genre", "Duration", "Country", "Content_rating", "Director", "Income", "Votes", "Score"), sep = ";")
 
 LET'S TAKE A GENERAL VIEW OF OUR DATASET
 vis_dat(Imbd_messy_data)
 
-LET'S SEE WHAT R SUGGEST OUR DATA CLASS SHOULD BE
+LET'S SEE WHAT R SUGGESTS OUR DATA CLASS SHOULD BE
 vis_guess(Imbd_messy_data)
 
-LET'S SEE WHAT COLUMS HAS MISSING VALUES
+LET'S SEE WHAT COLUMNS HAS MISSING VALUES
 vis_miss(Imbd_messy_data)
 
 # DROPPING EMPTY ROW
@@ -54,7 +54,7 @@ sum(duplicated(Imbd_messy_data$IMBD_titleID))
 Imbd_messy_data$Original_title
 
 # REPLACE TITLE NAME WITH A CORRECT ONE
-# I KNEW THIS BECAUSE I WENT TO IMBD WEBSITE TO GO CONFIRM THE TITLE SINCE IT THEY HAVE ACCENTED LETTERS AND NOTICED TEHY WERE CORRECT AND JUST A LITTLE MISTAKE
+# I KNEW THIS BECAUSE I WENT TO IMBD WEBSITE TO GO CONFIRM THE TITLE SINCE IT THEY HAVE ACCENTED LETTERS AND NOTICED THEY WERE CORRECT AND JUST A LITTLE MISTAKE
 
 Imbd_messy_data$Original_title <- ifelse(Imbd_messy_data$Original_title == "Per qualche dollaro in piÃ", "Per qualche dollaro in più",
 ifelse(Imbd_messy_data$Original_title == "Le fabuleux destin d'AmÃ©lie Poulain", "Le fabuleux destin d'Amélie Poulain",
@@ -75,7 +75,7 @@ parse_date_time(Imbd_messy_data$Release_year, c('Ymd', 'dmY', 'dby', 'dmy', 'mdy
 Imbd_messy_data$Release_year = parse_date_time(Imbd_messy_data$Release_year, c('Ymd', 'dmY', 'dby', 'dmy', 'mdy'))
 class(Imbd_messy_data$Release_year)
 
-# FIXING THE MISSING DATA MANUALLY AFTER CHECKING IMBD SITE FOR THE IT
+# FIXING THE MISSING DATA MANUALLY AFTER CHECKING IMBD WEBSITE FOR IT
 is.na(Imbd_messy_data$Release_year)
 Imbd_messy_data$Release_year[70] <- ymd("1950-09-10")
 Imbd_messy_data$Release_year[83] <- ymd("1983-12-09")
@@ -87,7 +87,7 @@ Imbd_messy_data$Release_year
 # EXTRACTING YEAR
 Imbd_messy_data$Release_year <- year(Imbd_messy_data$Release_year)
 
-# CONFIRMING RELEASE_YEAR COLUMN IS ALREADY IN IT'S RIGHT CLASS (NUMERIC)
+# CONFIRMING RELEASE_YEAR COLUMN IS ALREADY IN ITS RIGHT CLASS (NUMERIC)
 class(Imbd_messy_data$Release_year)
 
 4
@@ -158,7 +158,7 @@ levels(Imbd_messy_data$Content_rating)
 # VIEWING THE DATA
 Imbd_messy_data$Director
 
-# REPLACING 'Ã‰ric TO Eric AND REPLACING ALL UNDERSCORES TO COMMA FOR PLACES WHERE MORE THAT A DIRECTOR IS INVOLVED
+# REPLACING 'Ã‰ric' TO 'Eric' AND REPLACING ALL UNDERSCORES TO COMMA FOR PLACES WHERE MORE THAT A DIRECTOR IS INVOLVED
 Imbd_messy_data$Director = str_replace(Imbd_messy_data$Director, 'Ã‰ric Toledano', 'Eric Toledano')
 Imbd_messy_data$Director = str_replace(Imbd_messy_data$Director, ' _', ', ')
 # DIRECTOR COLUMN IS IN ITS RIGHT CLASS (CHARACTER)
@@ -202,7 +202,7 @@ Imbd_messy_data$Score
 # REMOVING NON NUMERIC CHARACTER
 Imbd_messy_data$Score <- gsub("[^0-9.]", "", Imbd_messy_data$Score)
 
-# REMOVING DOUBLE DEIMAL POINTS
+# REMOVING DOUBLE DECIMAL POINTS
 Imbd_messy_data$Score <- gsub("\\.\\.", ".", Imbd_messy_data$Score)
 
 # REMOVING LEADING ZERO
