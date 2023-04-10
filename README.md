@@ -170,7 +170,7 @@ After cleaning the data, it is evident that the dataset consists of information 
 Overall, the goal of data cleaning is to ensure that the data is accurate, consistent, and complete. This will help you to avoid errors and make more accurate analyses and predictions.
 
 ---
-You can view the step-by-step process I followed to clean the data [here](IMBD_cleaning.R)
+You can view the step-by-step process I followed to clean the data [here](IMBD_Cleaning.R)
 
 
 
