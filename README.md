@@ -6,11 +6,11 @@
 This is an R project on data cleaning of an **IMBD movie list**. This project is to ensure that the data is accurate, complete and consistent so that it can be used for analysis or other application with confidence in its quality.
 
 ## PROBLEM STATEMENT
-The dataset contains information about movies such as title ID, release year, genre, duration, country, content rating, director, income, votes, and score. The data is not cleaned and contains several inconsistencies such as different date formats, missing values, and inconsistent values. The problem is to clean and pre-process the data to make it suitable for further analysis. Specifically, the data needs to be standardized to a common format, missing values need to be handled, and inconsistent values need to be corrected. The goal is to create a clean dataset that can be used to analyse trends and patterns in the movie industry. For example:
+The dataset contains information about movies such as title ID, release year, genre, duration, country, content rating, director, income, votes, and score. The data is not cleaned and contains several inconsistencies such as different date formats, missing values, and inconsistent values. The problem is to clean and pre-process the data to make it suitable for further analysis. Specifically, the data needs to be standardized to a common format, missing values need to be handled, and inconsistent values need to be corrected. The goal is to create a clean dataset that can be used to analyse the **.IMBD** data. For example:
 - The **Release year** column (e.g., '09 21 1972', '22 Feb 04', '10-29-99'), which need to be converted to a consistent format (e.g., 'YYYY-MM-DD') for analysis.
 -	Some rows contain missing or invalid data in the **Duration** column (e.g., 'Nan', 'Inf'), which need to be cleaned or imputed to ensure data integrity.
 -	The **Genre** column contains multiple genres separated by commas, which need to be split into separate columns to facilitate analysis.
--	The **Content Rating** column contains abbreviated characters which needs to be in their full form for thos=e who would not know the meaning (e.g., 'R', 'Not Rated', 'PG-13', 'Approved') that need to be standardized for analysis.
+-	The **Content Rating** column contains abbreviated characters which needs to be in their full form for those who would not know the meaning (e.g., 'R', 'Not Rated', 'PG-13', 'Approved') that need to be standardized for analysis.
 -	The **Income** column contains dollar signs and commas that need to be removed and the values converted to integers for analysis.
 -	The **Votes** column contains commas that need to be removed and the values converted to integers for analysis.
 -	The **Score** column contains inconsistent decimal separators (e.g., ',' and '.'), which need to be standardized for analysis.
@@ -55,7 +55,7 @@ When I initially downloaded the dataset, I viewed it in Excel before importing i
 
 ![03 mutate](https://user-images.githubusercontent.com/128150171/230800762-ea7763aa-4db9-4f8b-aa02-78784c9dfff9.png)
 
-### SEPERATE
+### SEPARATE
 
 ![04 seperate](https://user-images.githubusercontent.com/128150171/230800872-8d7fd039-508a-4020-87bf-162130c08bdd.png)
 
@@ -83,6 +83,7 @@ Messy                                                                           
 Messy                                                                                                    | Cleaned
 :-------------------------------------------:                                                            |:-------------------------------:
 ![12 messy_Imbdrelease_year](https://user-images.githubusercontent.com/128150171/230798305-000429fd-5dba-469b-b0bb-20a5abbeeef5.png) |![13 consistency in year](https://user-images.githubusercontent.com/128150171/230798819-1c386d62-3c18-445c-9e41-a5528320dc4f.png)
+
 ![14 cleaned_Imbdrelease_year](https://user-images.githubusercontent.com/128150171/230798340-3edb205e-14ed-4330-ad3b-59b1f178c1e6.png)
 
 ### GENRE
@@ -100,6 +101,7 @@ Messy                                                                           
 Messy                                                                                                          | Cleaned
 :-------------------------------------------:                                                                  |:-------------------------------:
 ![17 messy_Imbdduration](https://user-images.githubusercontent.com/128150171/230798920-3f23e054-90fe-4657-821c-6f8d16bf6ddf.png) |![18 na, nana inf of Duration](https://user-images.githubusercontent.com/128150171/230799411-52a4719f-d6bd-437e-9837-2b2b5e50b5ca.png)
+
 ![19 cleaned_imbdduration](https://user-images.githubusercontent.com/128150171/230798932-b14ef38f-051a-43e4-82da-51e671d00257.png)
 
 ### COUNTRY
@@ -116,6 +118,7 @@ Messy                                                                           
 Messy                                                                                                          | Cleaned
 :-------------------------------------------:                                                                  |:-------------------------------:
 ![22 messy_Imbdcontent_rating](https://user-images.githubusercontent.com/128150171/230798590-bcb654b5-cae8-414c-99ad-2978345dc33d.png) | ![23 cleaned_Imbdcontent_rating](https://user-images.githubusercontent.com/128150171/230798594-a3d1053d-18be-440a-a9f0-d454cfc1e46e.png)
+
 ![24 factor level content rating](https://user-images.githubusercontent.com/128150171/230799492-21dd0b8d-8b28-43d7-b9e2-c0d568ede1d8.png)
 
 ### DIRECTOR
@@ -164,11 +167,11 @@ You can view the cleaned data [here](Imbd_cleaned_data.xlsx)
 
 ![35 cleaned visguess](https://user-images.githubusercontent.com/128150171/230800249-10b890e3-5f72-47f9-92a9-a172fced4854.png)
 
+## LIMITATIONS
+The cleaning process for the dataset has some limitations that should be noted. Manually inserting data slowed down the cleaning process and may introduce errors or biases in the data if not done carefully. Additionally, some columns in the dataset have missing values or incomplete data, which may limit the analysis that can be conducted. In terms of the nature of the dataset, there are also some limitations to consider. The dataset only includes information about the top-rated movies on *IMBD*, which is a relatively small subset of all movies ever made, making it limited in scope. Additionally, the dataset is based on user ratings, which could potentially affect the representativeness of the sample and the accuracy of the ratings due to biases from self-selection, non-response, and rating manipulation. Lastly, the dataset only includes movies up to a certain point in time and may not reflect more recent trends or changes in the movie industry
 
 ## CONCLUSION AND RECOMMENDATION
-After cleaning the data, it is evident that the dataset consists of information on the top-rated movies on **IMBD** based on user ratings. The data includes the **IMBD** title ID, original title, release year, genre, duration, country of origin, content rating, director, income, number of votes, and user rating score. Finally, it is essential to note that the dataset is limited to the movies available on **IMBD**, and the ratings are based solely on user ratings on the website, so it may not represent the general audience's preferences.
-Overall, the goal of data cleaning is to ensure that the data is accurate, consistent, and complete. This will help you to avoid errors and make more accurate analyses and predictions.
-
+After cleaning the dataset, few out of the many insights that can be obtained for instance are : *The Lord of the Rings trilogy has three movies in the top 15, with The Return of the King having the highest score of 8.9. The top-rated movies are mostly crime and drama, followed by action and adventure, and are mainly from the United States. The content ratings of top-rated movies vary, with R being the most common, followed by PG-13 and PG. Interestingly, there is no clear correlation between a movie's income and its rating, as some high-rated movies had a low income, while some lower-rated movies had a high income. Furthermore, the number of votes for a movie is positively correlated with its rating, indicating that popular movies tend to have higher ratings. Overall, the top-rated movies in the dataset are diverse in terms of styles, genres, and origins, suggesting that there is no single formula for making a highly-rated movie.* Finally, the purpose of data cleaning is to ensure the accuracy, consistency, and completeness of the data, which can help prevent errors and enable more accurate analyses and predictions.
 ---
 You can view the step-by-step process I followed to clean the data [here](IMBD_Cleaning.R)
 
